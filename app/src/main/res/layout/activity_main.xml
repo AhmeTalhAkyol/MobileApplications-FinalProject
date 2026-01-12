@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konferans Kayıt Sistemi"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:id="@+id/btnRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration"
+        android:layout_marginBottom="16dp"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnVerification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/verification"
+        android:textSize="18sp" />
+
+</LinearLayout>

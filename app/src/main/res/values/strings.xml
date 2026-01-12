@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Conference Registration</string>
+    <string name="registration">Kayıt</string>
+    <string name="verification">Doğrulama</string>
+    <string name="user_id">Kullanıcı ID</string>
+    <string name="full_name">Ad Soyad</string>
+    <string name="title">Ünvan</string>
+    <string name="registration_type">Kayıt Tipi</string>
+    <string name="profile_photo">Profil Fotoğrafı</string>
+    <string name="take_photo">Fotoğraf Çek</string>
+    <string name="register">Kaydet</string>
+    <string name="verify">Doğrula</string>
+    <string name="search_user_id">Kullanıcı ID Giriniz</string>
+    <string name="user_not_found">Kullanıcı bulunamadı</string>
+    <string name="conference_info">Konferans Bilgisi</string>
+    <string name="camera_permission_required">Kamera izni gerekli</string>
+    <string name="fill_all_fields">Lütfen tüm alanları doldurunuz</string>
+    <string name="user_id_exists">Bu kullanıcı ID zaten kayıtlı</string>
+    <string name="registration_success">Kayıt başarılı</string>
+</resources>
