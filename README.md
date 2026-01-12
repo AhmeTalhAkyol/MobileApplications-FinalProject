@@ -1,58 +1,60 @@
-# Konferans Kayıt ve Doğrulama Sistemi
+# Conference Registration and Verification System
 
-Bu proje, Ankara Bilim Üniversitesi Mobil Uygulamalar dersi (CENG 443) final projesi kapsamında geliştirilmiştir.
+This project was developed as part of the Mobile Applications course
+(CENG 443) final project at Ankara Science University.
 
-## Proje Hakkında
+## About the Project
 
-Android tabanlı bir konferans katılımcı kayıt ve doğrulama sistemidir. Uygulama, yeni kullanıcıların kayıt olmasını ve kayıtlı kullanıcıların doğrulanmasını sağlar.
+An Android-based conference participant registration and verification system.
+The application allows new users to register and verifies registered users.
 
-## Özellikler
+## Features
 
-### Modül A: Katılımcı Kayıt (Registration)
-- Kullanıcı ID, Ad Soyad, Ünvan ve Kayıt Tipi bilgilerinin girilmesi
-- Profil fotoğrafı çekme (kamera entegrasyonu)
-- Konferans bilgisi butonu (web sitesine yönlendirme)
-- Verilerin Room Database'e kaydedilmesi
+### Module A: Participant Registration
+- Input fields for User ID, Full Name, Title, and Registration Type
+- Profile photo capture (camera integration)
+- Conference info button (redirects to website)
+- Data saved to Room Database
 
-### Modül B: Katılımcı Doğrulama (Verification)
-- Kullanıcı ID ile arama yapma
-- Bulunan kullanıcının bilgilerini görüntüleme
-- Kayıt tipine göre dinamik arka plan rengi:
-  - Tip 1 (Full): Yeşil
-  - Tip 2 (Student): Mavi
-  - Tip 3 (None): Turuncu
-- Kullanıcı bulunamazsa kırmızı arka plan ve hata mesajı
+### Module B: Participant Verification
+- Search by User ID
+- Display found user information
+- Dynamic background color based on registration type:
+  - Type 1 (Full): Green
+  - Type 2 (Student): Blue
+  - Type 3 (None): Orange
+- Red background and error message if user not found
 
-## Teknik Özellikler
+## Technical Specifications
 
-- **Dil:** Kotlin
-- **Mimari:** MVVM (Model-View-ViewModel)
-- **Veritabanı:** Room Persistence Library (SQLite)
-- **Kamera:** Android Camera Intent
+- **Language:** Kotlin
+- **Architecture:** MVVM (Model-View-ViewModel)
+- **Database:** Room Persistence Library (SQLite)
+- **Camera:** Android Camera Intent
 - **UI:** Material Design Components
-- **View Binding:** Aktif
+- **View Binding:** Enabled
 
-## Gereksinimler
+## Requirements
 
-- Android Studio Hedgehog veya üzeri
+- Android Studio Hedgehog or higher
 - Minimum SDK: 24 (Android 7.0)
 - Target SDK: 34 (Android 14)
 - Gradle 8.0+
 
-## Kurulum ve Çalıştırma
+## Installation and Running
 
-1. Projeyi Android Studio'da açın
-2. Gradle sync işleminin tamamlanmasını bekleyin
-3. Bir Android cihaz veya emülatör bağlayın
-4. Uygulamayı çalıştırın (Run 'app')
+1. Open the project in Android Studio
+2. Wait for Gradle sync to complete
+3. Connect an Android device or emulator
+4. Run the application (Run 'app')
 
-### Önemli Notlar
+### Important Notes
 
-- Uygulama ilk çalıştırıldığında kamera izni isteyecektir
-- Fotoğraflar cihazın external storage'ında saklanır
-- Veritabanı uygulama veri klasöründe oluşturulur
+- The app will request camera permission on first launch
+- Photos are stored in the device's external storage
+- Database is created in the application data folder
 
-## Proje Yapısı
+## Project Structure
 
 ```
 app/
@@ -71,43 +73,43 @@ app/
 │   │   ├── RegistrationActivity.kt
 │   │   └── VerificationActivity.kt
 │   ├── res/
-│   │   ├── layout/                      # XML layout dosyaları
+│   │   ├── layout/                      # XML layout files
 │   │   ├── values/                      # String, color, theme
 │   │   └── xml/
-│   │       └── file_paths.xml          # FileProvider yapılandırması
+│   │       └── file_paths.xml          # FileProvider configuration
 │   └── AndroidManifest.xml
 ```
 
-## Kullanım
+## Usage
 
-### Kayıt İşlemi
-1. Ana ekrandan "Kayıt" butonuna tıklayın
-2. Tüm alanları doldurun (User ID, Ad Soyad, Ünvan, Kayıt Tipi)
-3. "Fotoğraf Çek" butonuna tıklayarak profil fotoğrafı çekin
-4. "Kaydet" butonuna tıklayın
+### Registration Process
+1. Click the "Registration" button from the main screen
+2. Fill in all fields (User ID, Full Name, Title, Registration Type)
+3. Click "Take Photo" to capture a profile photo
+4. Click "Register" button
 
-### Doğrulama İşlemi
-1. Ana ekrandan "Doğrulama" butonuna tıklayın
-2. Kayıtlı kullanıcı ID'sini girin
-3. "Doğrula" butonuna tıklayın
-4. Sonuç ekranda görüntülenecektir
+### Verification Process
+1. Click the "Verification" button from the main screen
+2. Enter the registered user ID
+3. Click "Verify" button
+4. Results will be displayed on screen
 
-## Hata Yönetimi
+## Error Handling
 
-Uygulama aşağıdaki durumları ele alır:
-- Kamera izni reddedilirse kullanıcıya bilgi verilir
-- Boş alan kontrolü yapılır
-- Aynı User ID ile tekrar kayıt yapılmaya çalışılırsa uyarı verilir
-- Kullanıcı bulunamazsa hata mesajı gösterilir
-- Veritabanı işlemlerinde hata oluşursa try-catch ile yakalanır
+The application handles the following scenarios:
+- User is informed if camera permission is denied
+- Empty field validation is performed
+- Warning is shown if attempting to register with an existing User ID
+- Error message is displayed if user is not found
+- Database operation errors are caught with try-catch
 
-## Geliştirici Notları
+## Developer Notes
 
-- Room Database kullanıldı
-- MVVM mimarisi uygulandı
-- Coroutines kullanıldı
-- FileProvider ile kamera yönetildi
+- Room Database is used
+- MVVM architecture is implemented
+- Coroutines are used
+- Camera is managed with FileProvider
 
-## Lisans
+## License
 
-Bu proje eğitim amaçlı geliştirilmiştir.
+This project is developed for educational purposes.
